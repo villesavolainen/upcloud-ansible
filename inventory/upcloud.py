@@ -162,10 +162,10 @@ def get_server(manager, search_item, with_ip_addresses):
         return namespaced_server_dict
 
     if with_ip_addresses:
-        ips = manager.get_IPs()
+        ips = manager.get_ips()
         for ip in ips:
             if ip.address == search_item:
-                server = manager.get_server(ip.server_uuid)
+                server = manager.get_server(ip.server)
                 server_dict = namespace_fields(server)
                 print(json.dumps(server_dict))
                 return
