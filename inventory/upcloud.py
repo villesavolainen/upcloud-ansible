@@ -113,9 +113,9 @@ def assign_ips_to_servers(servers):
         object.__setattr__(server, 'ip_addresses', [])
 
     # assign IPs to their corresponding server
-    ips = manager.get_IPs()
+    ips = manager.get_ips()
     for ip in ips:
-        servermap[ip.server_uuid].ip_addresses.append(ip)
+        servermap[ip.server].ip_addresses.append(ip)
 
 
 def list_servers(manager, get_ip_address=False):
